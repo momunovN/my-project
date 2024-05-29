@@ -31,10 +31,11 @@ async def start(message: types.Message):
     else:
         await message.reply('Привет я эхо бот', reply_markup=get_keyboard_1())
 
-@dp.message_handler(lambda message: message.text == 'отправь фото кота')
+@dp.message_handler(lambda message: message.text == 'Отправь фото природы')
 async def btn_1_click(message: types.Message):
     await bot.send_photo(message.chat.id,
-                         photo='https://trikky.ru/wp-content/blogs.dir/1/files/2021/06/25/img-20210625-wa0008.jpg', caption='Вот тебе кот', reply_markup=get_keyboard_inline_1())
+                         photo='https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666361538_47-mykaleidoscope-ru-p-peizazhi-prirodi-krasivo-52.jpg',
+                         caption='Вот природа', reply_markup=get_keyboard_inline_1())
 
 
 
@@ -43,20 +44,21 @@ async def btn_1_click(message: types.Message):
 
 @dp.message_handler(lambda message: message.text == 'след. клава')
 async def btn_2_click(message: types.Message):
-    await message.answer('Тут попросить фото собаки', reply_markup=get_keyboard_2())
+    await message.answer('Тут попросить фото космоса', reply_markup=get_keyboard_2())
 
 
 
 
-@dp.message_handler(lambda message: message.text == 'отправь фото собаки')
+@dp.message_handler(lambda message: message.text == 'отправь фото из космоса')
 async def btn_3_click(message: types.Message):
-    await bot.send_photo(message.chat.id, photo='https://pichold.ru/wp-content/uploads/2019/07/animals.jpg', caption='Вот тебе собака', reply_markup=get_keyboard_inline_2())
+    await bot.send_photo(message.chat.id, photo='https://w-dog.ru/wallpapers/4/3/304282222858937/vselennaya-nebo-tumannost-planeta.jpg',
+                         caption='Вот тебе космос', reply_markup=get_keyboard_inline_2())
 
 
 
 @dp.message_handler(lambda message: message.text == 'вернуться назад')
 async def back_1(message: types.Message):
-    await message.answer('Тут попросить фото кота', reply_markup=get_keyboard_1())
+    await message.answer('Тут попросять фото природы', reply_markup=get_keyboard_1())
 
 
 
